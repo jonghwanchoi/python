@@ -1,31 +1,20 @@
-class Car :
-    color = ""
-    speed = 0
+from flask import Flask
 
-    def upSpeed(self, value) :
-        self.speed += value
-    
-    def downSpeed(slef, value) :
-        self.speed -= value
-        
-## 메인 코드 부분 ##
-myCar1 = Car()
-myCar1.color = "빨강"
-myCar1.speed = 0
+app = Flask(__name__)
 
-myCar2 = Car()
-myCar2.color = "파랑"
-myCar2.speed = 0
+@app.route('/')                   #// 기본주소로 접속되었을 때 실행할 함수 지정
+def hello():
+    return 'Hello world'
 
-myCar3 = Car()
-myCar3.color = "노랑"
-myCar3.speed = 0
+@app.route('/about')             #// '/about'으로 접속되었을 때 실행할 함수 지정
+def about():
+    return 'This is about page'
 
-myCar1.upSpeed(30)
-print("자동차1의 색상은 %s이며, 현재 속도는 %dkm입니다." % (myCar1.color, myCar1.speed))
+@app.route('/contact')          #'/contact'으로 접속되었을 때 실행할 함수 지정
+def contact():
+    return 'This is contact page'
 
-myCar2.upSpeed(60)
-print("자동차2의 색상은 %s이며, 현재 속도는 %dkm입니다." % (myCar2.color, myCar2.speed))
 
-myCar3.upSpeed(0)
-print("자동차3의 색상은 %s이며, 현재 속도는 %dkm입니다." % (myCar3.color, myCar3.speed))
+
+if __name__ == '__main__':         # //웹서버 구동
+    app.run(debug=True)
