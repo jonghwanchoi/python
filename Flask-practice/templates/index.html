@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>미니 프로젝트</h1>
+    사용자 : {{user}}<br>
+    온도 : {{data.temper}}<br>
+    습도 : {{data.humidity}}<br>
+    미세먼지 : {{data.dust}}<br>
+
+</body>
+</html>
